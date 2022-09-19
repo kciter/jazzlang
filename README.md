@@ -49,6 +49,7 @@
 
 ## 구현체
 * [JavaScript (Node)](./node)
+* [JavaScript (Web)](./web)
 
 ## 참고자료
 * [Brainfuck](https://github.com/kciter/brainfuck-impl)
