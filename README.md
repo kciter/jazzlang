@@ -1,4 +1,4 @@
-# 재즈가 뭐라고 생각하세요?
+# 재즈가 뭐라고 생각하세요? 🎷
 이 저장소는 [난해한 프로그래밍 언어 만들어보기](https://kciter.so/posts/crafting-esolang) 포스팅에서 언어 제작 예제를 위해 만들어졌습니다. 이왕 만드는 김에 재밌는 밈을 이용하여 구현해봤습니다. 기본적인 구현 스펙은 Brainfuck과 거의 동일합니다.
 
 <a href="https://www.youtube.com/watch?v=18OYMT2qUSY" target="_blank">

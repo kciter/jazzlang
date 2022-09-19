@@ -8,6 +8,7 @@ function Jazzlang(size = 32768) {
 }
 
 Jazzlang.prototype.load = function (code) {
+  this.code = [];
   const rawCode = code
     .split("재즈가 뭐라고 생각하세요?")[1]
     .split("이거야")[0]
