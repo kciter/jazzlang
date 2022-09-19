@@ -2,17 +2,56 @@ const fs = require("fs");
 
 function Jazzlang(size = 32768) {
   this.memory = new Array(size).fill(0);
-  this.code = "";
+  this.code = [];
   this.ptr = 0;
   this.pc = 0;
   this.jumpTo = {};
 }
 
 Jazzlang.prototype.load = function (code) {
-  this.code = code.split("");
+  const rawCode = code
+    .split("재즈가 뭐라고 생각하세요?")[1]
+    .split("이거야")[0]
+    .split("");
+  let read = 0;
+
+  while (read < rawCode.length) {
+    if (rawCode[read] === "샤") {
+      if (rawCode[read + 1] === "빱") {
+        this.code.push(">");
+        read += 2;
+      } else if (rawCode[read + 1] === "바" && rawCode[read + 2] === "다") {
+        this.code.push(",");
+        read += 3;
+      }
+    } else if (rawCode[read] === "사" && rawCode[read + 1] === "바") {
+      this.code.push("<");
+      read += 2;
+    } else if (rawCode[read] === "두") {
+      if (rawCode[read + 1] === "비") {
+        this.code.push("+");
+        read += 2;
+      } else if (rawCode[read + 1] === "밥") {
+        this.code.push("-");
+        read += 2;
+      } else if (rawCode[read + 1] === "붸" && rawCode[read + 2] === "둡") {
+        this.code.push(".");
+        read += 3;
+      } else if (rawCode[read + 1] === "봐") {
+        this.code.push("]");
+        read += 2;
+      }
+    } else if (rawCode[read] === "뚜" && rawCode[read + 1] === "비") {
+      this.code.push("[");
+      read += 2;
+    } else {
+      read += 1;
+    }
+  }
 };
 
 Jazzlang.prototype.preprocess = function () {
+  // 점프 위치 기록
   const stack = [];
   for (let i = 0; i < this.code.length; i += 1) {
     const command = this.code[i];
