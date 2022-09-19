@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>재즈가 뭐라고 생각하세요?</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no"/>
+    <script src="./jazzlang.js"></script>
+  </head>
+
+  <body>
+    <div style="max-width: 600px;width: 100%;margin: 0 auto;">
+      <h1 style="text-align: center;">Jazzlang</h1>
+      <img src="../assets/thumbnail.png" alt="샤빱두비뚜밥 두비두비두비두비 뚜비두밥 사바두비두봐 샤바다 두붸둡" style="max-width: 600px;width: 100%;" />
+      <p>
+        Jazzlang은 <a href="" target="_blank">난해한 프로그래밍 언어 만들어보기</a> 포스팅에서 언어 제작 예제를 위해 만들어졌습니다. 이왕 만드는 김에 재밌는 밈을 이용하여 구현해봤습니다. 기본적인 구현 스펙은 <a href="https://en.wikipedia.org/wiki/Brainfuck" target="_blank">Brainfuck</a>과 거의 동일합니다.
+      </p>
+      <p>
+        Jazzlang을 위한 인터프리터는 자바스크립트로 제작되었습니다.
+      </p>
+      <p>
+        <h2>Code</h2>
+        <textarea id="code" rows="10" style="max-width: 600px;width: 100%;">재즈가 뭐라고 생각하세요?
+두비두비두비 두비두비두비 두비두비두비두비
+뚜비 샤빱 두비두비 두비두비두비 두비두비 샤빱 두비두비두비 두비두비두비 두비두비두비두비 샤빱 두비두비두비 샤빱 두비 사바사바사바사바 두밥 두봐
+샤빱 두비두비 두붸둡 샤빱 두비 두붸둡 두비두비두비 두비두비두비두비 두붸둡 두붸둡 두비두비두비 두붸둡 샤빱
+두비두비두비 두비두비두비 두비두비두비 두비두비두비 두비두비 두붸둡 두밥두밥두밥 두밥두밥두밥 두밥두밥두밥 두밥두밥두밥 두붸둡 사바사바
+두비두비두비 두비두비두비 두비두비두비 두비두비두비 두비두비두비 두붸둡 샤빱 두붸둡 두비두비두비 두붸둡 두밥두밥두밥 두밥두밥두밥 두붸둡
+두밥두밥두밥 두밥두밥두밥 두밥두밥 두붸둡 샤빱 두비 두붸둡
+이거야</textarea>
+        <div>
+          <button id="run">실행</button>
+        </div>
+      </p>
+      <p>
+        <h2>Result</h2>
+        <textarea id="result" readonly rows="10" style="max-width: 600px;width: 100%;"></textarea>
+      </p>
+    </div>
+
+    <script>
+      document.getElementById('run').addEventListener('click', function() {
+        var code = document.getElementById('code').value;
+        var result = document.getElementById('result');
+        window.jazz.load(code);
+        window.jazz.run()
+        result.value = window.jazz.result;
+      });
+    </script>
+  </body>
+</html>
