@@ -9,6 +9,6 @@ node jazzlang.js <filename.jazz>
 
 For example,
 ```bash
-node brainfuck.js helloworld.jazz
+node jazzlang.js helloworld.jazz
 Hello, World!
 ```
